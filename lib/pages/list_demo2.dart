@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:provider_demo/pages/counter_demo.dart';
 import 'package:provider_demo/providers/list_provider.dart';
 
 class SecondPage extends StatefulWidget {
@@ -57,6 +58,23 @@ class _SecondPageState extends State<SecondPage> {
                     ),
                   );
                 },
+              ),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blueGrey,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  )),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const ThirdPage()));
+              },
+              child: const Text(
+                "Next Page",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
               ),
             ),
           ],
