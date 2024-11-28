@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:provider_demo/pages/list_demo.dart';
 import 'package:provider_demo/providers/counter_provider.dart';
 import 'package:provider_demo/providers/list_provider.dart';
 import 'package:provider_demo/providers/movie_provider.dart';
+import 'package:provider_demo/user/provider/user_provider.dart';
+import 'package:provider_demo/user/view/user_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,9 +26,12 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => MovieModel(),
         ),
+        ChangeNotifierProvider(
+          create: (context) => UserProvider(),
+        ),
       ],
       child: const MaterialApp(
-        home: FirstPage(),
+        home: UserPage(),
       ),
     );
   }
